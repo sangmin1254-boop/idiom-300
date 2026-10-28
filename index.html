@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>초등 사자성어 300 마스터 &amp; 오답노트 | 시니어 맞춤형 지혜 학습관</title>
-  <meta name="description" content="초등 필수 300개 사자성어 사전, 맞춤형 퀴즈, 친절한 해설과 오답노트로 재미있게 학습하세요!" />
+  <meta name="description" content="초등 필수 300개 사자성어 맞춤형 퀴즈, 친절한 해설과 오답노트로 재미있게 학습하세요!" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="📜 초등 사자성어 300 마스터 & 오답노트" />
-  <meta property="og:description" content="시니어 맞춤형 큰 글씨 사자성어 300선 사전 · 퀴즈 · 오답 복습 게임! 지금 바로 도전해 보세요." />
+  <meta property="og:description" content="시니어 맞춤형 큰 글씨 사자성어 300선 퀴즈 · 오답 복습 게임! 지금 바로 도전해 보세요." />
   <meta name="theme-color" content="#1b4332" />
-  <!-- Google Fonts: Noto Serif KR (한자/제목 명조체) & Pretendard/Noto Sans KR (본문 가독성) -->
+  <!-- Google Fonts: Noto Serif KR (한자/제목 명조체) & Noto Sans KR (본문 가독성) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
@@ -22,48 +22,31 @@
       <div class="brand-area" id="brandHomeBtn" role="button" tabindex="0" aria-label="홈으로 이동">
         <span class="brand-badge">300선 완벽 수록</span>
         <h1 class="brand-title">📜 초등 사자성어 300 마스터 <span class="brand-sub">&amp; 오답노트</span></h1>
-        <p class="brand-desc">시니어의 눈과 마음에 맞춘 큰 글씨 · 친절한 해설 · 맞춤형 복습 시스템</p>
       </div>
 
       <div class="utility-controls">
         <button type="button" id="shareLinkBtn" class="util-btn" title="주소 복사하여 카카오톡에 공유하기">
           <span class="util-icon">💬</span>
-          <span class="util-text">카톡 공유(주소복사)</span>
+          <span class="util-text">카톡 공유</span>
         </button>
         <button type="button" id="soundToggleBtn" class="util-btn active" aria-pressed="true" title="효과음 켜기/끄기">
           <span class="util-icon" id="soundIcon">🔊</span>
           <span class="util-text" id="soundText">효과음 켜짐</span>
         </button>
         <div class="font-size-group" role="group" aria-label="글자 크기 조절">
-          <button type="button" class="util-btn font-btn active" data-size="normal">보통 글씨</button>
-          <button type="button" class="util-btn font-btn" data-size="large">큰 글씨</button>
-          <button type="button" class="util-btn font-btn" data-size="xlarge">특대 글씨</button>
+          <button type="button" class="util-btn font-btn active" data-size="normal">보통</button>
+          <button type="button" class="util-btn font-btn" data-size="large">크게</button>
+          <button type="button" class="util-btn font-btn" data-size="xlarge">특대</button>
         </div>
       </div>
     </div>
 
-    <!-- 오늘의 사자성어 배너 -->
-    <div class="today-banner" id="todayBanner">
-      <div class="today-label">💡 오늘의 지혜</div>
-      <div class="today-content">
-        <span class="today-hanja" id="todayHanja">溫故知新</span>
-        <strong class="today-word" id="todayWord">온고지신</strong>
-        <span class="today-meaning" id="todayMeaning">옛것을 익히고 연구하여 거기서 새로운 지식이나 도리를 깨달아 앎</span>
-      </div>
-      <button type="button" class="today-refresh-btn" id="todayRefreshBtn" title="다른 사자성어 보기">🔄 다른 말씀</button>
-    </div>
-
-    <!-- 메인 네비게이션 탭 -->
+    <!-- 메인 네비게이션 탭 (사전 삭제 -> 맞춤형 퀴즈 & 완벽 오답노트 2개 탭 구성) -->
     <nav class="main-nav" aria-label="주요 메뉴">
-      <button type="button" class="nav-tab active" data-tab="dictionary" id="tabBtnDictionary">
-        <span class="nav-icon">📖</span>
-        <span class="nav-label">300선 사자성어 사전</span>
-        <span class="nav-badge" id="dictTotalBadge">300</span>
-      </button>
-      <button type="button" class="nav-tab" data-tab="quiz" id="tabBtnQuiz">
+      <button type="button" class="nav-tab active" data-tab="quiz" id="tabBtnQuiz">
         <span class="nav-icon">✍️</span>
         <span class="nav-label">맞춤형 퀴즈 풀기</span>
-        <span class="nav-badge highlight">도전</span>
+        <span class="nav-badge highlight">300선 도전</span>
       </button>
       <button type="button" class="nav-tab" data-tab="wrongnote" id="tabBtnWrongNote">
         <span class="nav-icon">📝</span>
@@ -76,99 +59,15 @@
   <!-- 메인 콘텐츠 영역 -->
   <main class="app-main">
     <!-- ==========================================
-         1. 300선 사자성어 사전 탭
+         1. 맞춤형 퀴즈 모드 탭 (기본 메인 화면)
          ========================================== -->
-    <section id="section-dictionary" class="tab-section active" aria-labelledby="tabBtnDictionary">
-      <div class="section-card search-panel">
-        <div class="search-header">
-          <div>
-            <h2 class="section-title">📖 초등 필수 300선 사자성어 사전</h2>
-            <p class="section-subtitle">궁금한 사자성어의 한글 음, 한자, 또는 뜻에 포함된 단어로 검색해 보세요.</p>
-          </div>
-          <div class="dict-stats">
-            <div class="stat-pill">전체 <strong>300</strong>개</div>
-            <div class="stat-pill mastered-pill">암기 완료 <strong id="masteredCountText">0</strong>개</div>
-          </div>
-        </div>
-
-        <!-- 검색 입력창 -->
-        <div class="search-input-wrap">
-          <span class="search-icon">🔍</span>
-          <input
-            type="search"
-            id="dictSearchInput"
-            class="search-input"
-            placeholder="예: 고진감래, 苦盡甘來, 친구, 은혜, 노력..."
-            autocomplete="off"
-          />
-          <button type="button" id="dictSearchClearBtn" class="search-clear-btn hidden" aria-label="검색어 지우기">✕ 지우기</button>
-        </div>
-
-        <!-- 초성 필터 바 -->
-        <div class="filter-group">
-          <span class="filter-label">가나다 초성 찾기:</span>
-          <div class="chosung-bar" id="chosungBar" role="group" aria-label="초성별 필터">
-            <button type="button" class="chosung-btn active" data-chosung="ALL">전체</button>
-            <button type="button" class="chosung-btn" data-chosung="ㄱ">ㄱ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㄴ">ㄴ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㄷ">ㄷ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅁ">ㅁ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅂ">ㅂ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅅ">ㅅ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅇ">ㅇ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅈ">ㅈ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅊ">ㅊ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅌ">ㅌ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅍ">ㅍ</button>
-            <button type="button" class="chosung-btn" data-chosung="ㅎ">ㅎ</button>
-          </div>
-        </div>
-
-        <!-- 학습 상태 및 표시 옵션 필터 -->
-        <div class="dict-toolbar">
-          <div class="status-filter-group" role="group" aria-label="학습 상태 필터">
-            <button type="button" class="filter-chip active" data-filter="all">전체 보기</button>
-            <button type="button" class="filter-chip" data-filter="unmastered">학습 중인 단어만</button>
-            <button type="button" class="filter-chip" data-filter="mastered">⭐ 암기 완료 단어만</button>
-            <button type="button" class="filter-chip" data-filter="wrong">📌 오답노트 단어만</button>
-          </div>
-
-          <div class="study-mode-toggles">
-            <button type="button" id="toggleBlindMeaningBtn" class="outline-btn" aria-pressed="false">
-              🙈 뜻 가리고 암기 테스트
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 검색 결과 요약 -->
-      <div class="results-bar">
-        <p class="results-count">검색 결과 총 <strong id="filteredCountText">300</strong>건</p>
-        <p class="results-hint">💡 단어를 누르면 소리로 읽어주거나 오답노트에 직접 추가할 수 있습니다.</p>
-      </div>
-
-      <!-- 사자성어 카드 그리드 -->
-      <div id="dictionaryGrid" class="idiom-grid"></div>
-
-      <!-- 검색 결과 없음 안내 -->
-      <div id="dictEmptyState" class="empty-state hidden">
-        <div class="empty-icon">🧐</div>
-        <h3 class="empty-title">일치하는 사자성어를 찾지 못했습니다.</h3>
-        <p class="empty-desc">다른 검색어를 입력하시거나 [전체] 초성 버튼을 눌러 보세요.</p>
-        <button type="button" id="resetDictFilterBtn" class="primary-btn">전체 300선 다시 보기</button>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         2. 맞춤형 퀴즈 모드 탭
-         ========================================== -->
-    <section id="section-quiz" class="tab-section" aria-labelledby="tabBtnQuiz">
-      <!-- 2-A. 퀴즈 설정 화면 -->
+    <section id="section-quiz" class="tab-section active" aria-labelledby="tabBtnQuiz">
+      <!-- 1-A. 퀴즈 설정 화면 -->
       <div id="quizSetupView" class="section-card quiz-setup-card">
         <div class="setup-header">
           <span class="setup-badge">맞춤형 두뇌 활력 학습</span>
-          <h2 class="section-title">✍️ 사자성어 마스터 퀴즈 설정</h2>
-          <p class="section-subtitle">원하시는 문제 수와 퀴즈 유형을 선택하신 후 아래 [퀴즈 시작하기] 버튼을 눌러 주세요.</p>
+          <h2 class="section-title">✍️ 사자성어 300 마스터 퀴즈</h2>
+          <p class="section-subtitle">원하시는 문제 수와 퀴즈 유형을 선택하신 후 아래 [퀴즈 시작하기]를 눌러 주세요.</p>
         </div>
 
         <div class="setup-options-container">
@@ -190,11 +89,11 @@
               </button>
               <button type="button" class="setup-option-btn" data-count="100">
                 <span class="opt-main">100문항</span>
-                <span class="opt-sub">고수 도전 코스</span>
+                <span class="opt-sub">고수 도전</span>
               </button>
               <button type="button" class="setup-option-btn" data-count="300">
                 <span class="opt-main">300문항</span>
-                <span class="opt-sub">전권 완전 정복</span>
+                <span class="opt-sub">전권 정복</span>
               </button>
             </div>
           </div>
@@ -206,17 +105,17 @@
               <button type="button" class="setup-option-btn active" data-type="word_to_meaning">
                 <span class="opt-icon">📜 ➡️ 💡</span>
                 <span class="opt-main">한자어 보고 뜻 맞히기</span>
-                <span class="opt-sub">제시된 한자와 음을 보고 알맞은 속뜻을 고릅니다</span>
+                <span class="opt-sub">한자와 음을 보고 알맞은 속뜻 고르기</span>
               </button>
               <button type="button" class="setup-option-btn" data-type="meaning_to_word">
                 <span class="opt-icon">💡 ➡️ 📜</span>
                 <span class="opt-main">뜻 보고 한자어 맞히기</span>
-                <span class="opt-sub">제시된 뜻풀이를 읽고 알맞은 사자성어를 고릅니다</span>
+                <span class="opt-sub">뜻풀이를 읽고 알맞은 사자성어 고르기</span>
               </button>
               <button type="button" class="setup-option-btn" data-type="mixed">
                 <span class="opt-icon">🔀 🎯</span>
                 <span class="opt-main">랜덤 혼합 모드</span>
-                <span class="opt-sub">뜻 맞히기와 한자어 맞히기가 골고루 섞여 출제됩니다</span>
+                <span class="opt-sub">뜻 맞히기와 한자어 맞히기 섞어 풀기</span>
               </button>
             </div>
           </div>
@@ -232,7 +131,7 @@
         </div>
       </div>
 
-      <!-- 2-B. 퀴즈 진행 화면 -->
+      <!-- 1-B. 퀴즈 진행 화면 -->
       <div id="quizPlayView" class="section-card quiz-play-card hidden">
         <!-- 상단 상태바 -->
         <div class="quiz-topbar">
@@ -241,7 +140,7 @@
             <span class="score-item correct">⭕ 정답 <strong id="liveCorrectCount">0</strong></span>
             <span class="score-item wrong">❌ 오답 <strong id="liveWrongCount">0</strong></span>
           </div>
-          <button type="button" id="quitQuizBtn" class="quit-btn">퀴즈 종료</button>
+          <button type="button" id="quitQuizBtn" class="quit-btn">⚙️ 설정으로</button>
         </div>
 
         <!-- 진행률 바 -->
@@ -258,25 +157,27 @@
         <!-- 문제 출제 박스 -->
         <div class="question-box">
           <p class="question-instruction" id="questionInstruction">다음 사자성어의 알맞은 뜻은 무엇일까요?</p>
-          <div class="question-prompt" id="questionPrompt">
-            <!-- JS에서 동적 렌더링 -->
-          </div>
+          <div class="question-prompt" id="questionPrompt"></div>
           <div class="question-sub" id="questionSub"></div>
         </div>
 
         <!-- 4지선다 보기 영역 -->
-        <div class="choices-container" id="choicesContainer" role="group" aria-label="정답 보기 선택">
-          <!-- JS에서 1~4번 버튼 동적 생성 -->
-        </div>
+        <div class="choices-container" id="choicesContainer" role="group" aria-label="정답 보기 선택"></div>
 
-        <!-- 즉각적이고 풍부한 해설 피드백 패널 -->
+        <!-- 즉각적이고 풍부한 해설 피드백 패널 (상단과 하단 모두에 다음 문제 스위치 배치!) -->
         <div id="feedbackPanel" class="feedback-panel hidden" aria-live="polite">
           <div class="feedback-banner" id="feedbackBanner">
-            <span class="feedback-icon" id="feedbackIcon">⭕</span>
-            <div class="feedback-title-wrap">
-              <h3 class="feedback-title" id="feedbackTitle">정답입니다! 참 잘하셨습니다!</h3>
-              <p class="feedback-subtitle" id="feedbackSubtitle"></p>
+            <div class="feedback-banner-left">
+              <span class="feedback-icon" id="feedbackIcon">⭕</span>
+              <div class="feedback-title-wrap">
+                <h3 class="feedback-title" id="feedbackTitle">정답입니다!</h3>
+                <p class="feedback-subtitle" id="feedbackSubtitle"></p>
+              </div>
             </div>
+            <!-- 카카오톡 모바일 화면에서도 절대 잘리지 않는 상단 즉시 이동 스위치 -->
+            <button type="button" id="nextQuestionTopBtn" class="next-switch-top-btn">
+              다음 문제 ➡️
+            </button>
           </div>
 
           <div class="feedback-details">
@@ -291,9 +192,9 @@
               <p class="detail-meaning" id="explainCorrectMeaning"></p>
             </div>
 
-            <!-- 오답 선택 시 내가 고른 오답 사자성어 해설 (오답일 때만 강조 표시 + 정답일 때도 다른 보기 학습용으로 표시 가능) -->
+            <!-- 오답 선택 시 내가 고른 오답 사자성어 해설 -->
             <div id="wrongChoiceDetailBox" class="detail-box wrong-detail-box hidden">
-              <div class="detail-badge wrong-badge">💡 내가 선택한 보기의 뜻 알아보기</div>
+              <div class="detail-badge wrong-badge">💡 내가 선택한 보기의 뜻</div>
               <div class="detail-header">
                 <strong class="detail-word" id="explainSelectedWord"></strong>
                 <span class="detail-hanja" id="explainSelectedHanja"></span>
@@ -304,11 +205,12 @@
 
             <!-- 나머지 보기 사자성어 한눈에 비교하기 -->
             <div class="other-options-box">
-              <h4 class="other-options-title">📚 함께 나온 다른 사자성어 뜻 비교해보기</h4>
+              <h4 class="other-options-title">📚 함께 나온 다른 보기 뜻 비교</h4>
               <ul class="other-options-list" id="otherOptionsList"></ul>
             </div>
           </div>
 
+          <!-- 하단 고정형 큼직한 다음 문제 스위치 -->
           <div class="feedback-actions">
             <button type="button" id="nextQuestionBtn" class="Giant-cta-btn next-btn">
               다음 문제로 넘어가기 ➡️
@@ -317,7 +219,7 @@
         </div>
       </div>
 
-      <!-- 2-C. 퀴즈 결과 화면 -->
+      <!-- 1-C. 퀴즈 결과 화면 -->
       <div id="quizResultView" class="section-card quiz-result-card hidden">
         <div class="result-header">
           <div class="result-medal" id="resultMedal">🏆</div>
@@ -345,7 +247,7 @@
         </div>
 
         <div id="resultWrongNotice" class="result-wrong-notice">
-          <p>📌 이번 퀴즈에서 틀리신 단어는 <strong>[완벽 오답노트]</strong>에 자동으로 기록되었습니다. 지금 바로 복습해 보시겠습니까?</p>
+          <p>📌 틀리신 단어는 <strong>[완벽 오답노트]</strong>에 자동 기록되었습니다. 바로 복습해 보시겠습니까?</p>
         </div>
 
         <div class="result-actions">
@@ -363,7 +265,7 @@
     </section>
 
     <!-- ==========================================
-         3. 완벽한 오답노트 탭
+         2. 완벽한 오답노트 탭
          ========================================== -->
     <section id="section-wrongnote" class="tab-section" aria-labelledby="tabBtnWrongNote">
       <div class="section-card wrongnote-header-card">
@@ -372,7 +274,7 @@
             <span class="setup-badge alert-badge">틀린 단어 완벽 정복</span>
             <h2 class="section-title">📝 나의 완벽 오답노트</h2>
             <p class="section-subtitle">
-              퀴즈에서 틀렸거나 사전에서 담아둔 사자성어가 자동으로 기록됩니다. 완벽히 외운 단어는 [암기 완료]로 지우거나, 오답만 모아 복습 퀴즈를 풀어보세요!
+              퀴즈에서 틀린 사자성어가 자동으로 기록됩니다. 오답만 모아 복습 퀴즈를 풀거나 외운 단어를 졸업시켜 보세요!
             </p>
           </div>
 
@@ -388,7 +290,7 @@
         <div id="wrongQuizControlPanel" class="wrong-quiz-control-panel">
           <div class="wq-info">
             <h3 class="wq-title">🎯 오답 복습 퀴즈 바로 시작</h3>
-            <p class="wq-desc">오답노트에 저장된 단어들만 집중적으로 출제하여 완벽히 내 것으로 만듭니다.</p>
+            <p class="wq-desc">오답노트에 저장된 단어들만 집중 출제하여 완벽히 내 것으로 만듭니다.</p>
           </div>
           <div class="wq-buttons">
             <button type="button" class="Giant-cta-btn accent-btn" id="startWrongReviewQuizMixedBtn">
@@ -406,7 +308,7 @@
         </div>
 
         <div class="wrongnote-toolbar" id="wrongnoteToolbar">
-          <span class="wn-guide">💡 복습 퀴즈에서 정답을 맞히거나, 아래 카드에서 <strong>[완벽히 외웠어요 ✅]</strong> 버튼을 누르면 오답노트에서 졸업합니다.</span>
+          <span class="wn-guide">💡 복습 퀴즈에서 맞히거나 <strong>[완벽히 외웠어요 ✅]</strong>를 누르면 오답노트에서 삭제됩니다.</span>
           <button type="button" id="clearAllWrongBtn" class="danger-outline-btn">🗑️ 오답노트 전체 비우기</button>
         </div>
       </div>
@@ -419,8 +321,8 @@
         <div class="empty-icon">🎉</div>
         <h3 class="empty-title">현재 오답노트에 기록된 사자성어가 없습니다!</h3>
         <p class="empty-desc">
-          퀴즈를 풀다가 틀린 문제가 생기면 이곳에 자동으로 차곡차곡 기록됩니다.<br />
-          또는 <strong>[300선 사자성어 사전]</strong>에서 외우기 어려운 단어의 <strong>[📌 오답노트 담기]</strong>를 눌러 추가할 수도 있습니다.
+          퀴즈를 풀다가 틀린 문제가 생기면 이곳에 자동으로 기록됩니다.<br />
+          지금 바로 맞춤형 퀴즈에 도전해 보세요!
         </p>
         <div class="empty-actions">
           <button type="button" id="goToQuizFromEmptyBtn" class="Giant-cta-btn">✍️ 맞춤형 퀴즈 풀러 가기</button>
@@ -428,11 +330,6 @@
       </div>
     </section>
   </main>
-
-  <!-- 하단 푸터 -->
-  <footer class="app-footer">
-    <p><strong>초등 사자성어 300 마스터 &amp; 오답노트</strong> | 시니어의 활기찬 평생 학습과 두뇌 건강을 응원합니다.</p>
-  </footer>
 
   <!-- 토스트 알림창 -->
   <div id="toastMessage" class="toast-message hidden" role="status" aria-live="polite"></div>
